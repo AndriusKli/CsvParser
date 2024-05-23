@@ -16,7 +16,7 @@ public class CsvService {
         this.csvMapper = new CsvMapper();
     }
 
-    public <T> List<T> parseCsv(String file, Class clazz) throws IOException {
+    public <T> List<T> parseCsv(String file, Class<T> clazz) throws IOException {
         ObjectReader objectReader = csvMapper
                 .registerModule(new JavaTimeModule())
                 .readerFor(clazz)
